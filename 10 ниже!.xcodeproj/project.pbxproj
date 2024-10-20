@@ -24,6 +24,7 @@
 		7F37CBC12C3D61FA00FECF84 /* _0______UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBC02C3D61FA00FECF84 /* _0______UITests.swift */; };
 		7F37CBC32C3D61FA00FECF84 /* _0______UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBC22C3D61FA00FECF84 /* _0______UITestsLaunchTests.swift */; };
 		7FBAB9372CC2CC1D00C26748 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBAB9362CC2CC1D00C26748 /* Alerts.swift */; };
+		7FC09CDB2CC5947500CCDE75 /* Wallpapers - ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC09CDA2CC5947500CCDE75 /* Wallpapers - ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		7F37CBC02C3D61FA00FECF84 /* _0______UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_0______UITests.swift"; sourceTree = "<group>"; };
 		7F37CBC22C3D61FA00FECF84 /* _0______UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_0______UITestsLaunchTests.swift"; sourceTree = "<group>"; };
 		7FBAB9362CC2CC1D00C26748 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		7FC09CDA2CC5947500CCDE75 /* Wallpapers - ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallpapers - ViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				7F1921322CB034B200F703AE /* SegmentedControlFunctions.swift */,
 				7F19212A2CB0293800F703AE /* LablesFunctions.swift */,
 				7FBAB9362CC2CC1D00C26748 /* Alerts.swift */,
+				7FC09CDA2CC5947500CCDE75 /* Wallpapers - ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F1921292CB0287D00F703AE /* StartButtonFunctions.swift in Sources */,
+				7FC09CDB2CC5947500CCDE75 /* Wallpapers - ViewController.swift in Sources */,
 				7F1921332CB034B200F703AE /* SegmentedControlFunctions.swift in Sources */,
 				7F1921262CB027CE00F703AE /* NumbersButtonFunctions.swift in Sources */,
 				7F08ABD32C56757900C12B9D /* Media - ViewController.swift in Sources */,

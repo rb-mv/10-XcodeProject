@@ -61,13 +61,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //MARK: - Wallpapers
         
-        gameWallpapersImageView = UIImageView(frame: self.view.bounds)
-        
-        gameWallpapersImageView.contentMode = .scaleAspectFill
-        
-        gameWallpapersImageView.image = UIImage(named: "Wallpapers")
-        
-        self.view.addSubview(gameWallpapersImageView)
+        createGameWallpapers(gameWallpapersImageView)
         
         
         // MARK: - Media

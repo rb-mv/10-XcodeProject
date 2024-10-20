@@ -12,92 +12,128 @@ extension ViewController {
     
     //MARK: - Create startButton
     
-    func createStartButton() {
+    func createStartButton(_ button: UIButton) {
         
-        startButton.frame = CGRect(x: 50, y: 750, width: 300, height: 70)
-        startButton.setTitle("Start", for: .normal)
-        startButton.titleLabel?.font = .systemFont(ofSize: 20)
-        startButton.setTitleColor(UIColor.orange, for: .normal)
-        startButton.backgroundColor = UIColor.systemYellow
-        startButton.layer.cornerRadius = 16
-        startButton.clipsToBounds = true
-        startButton.setBackgroundImage(startButtonImage, for: .normal)
+        button.frame = CGRect(x: 50, y: 750, width: 300, height: 70)
+        button.setTitle("Start", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20)
+        button.setTitleColor(UIColor.orange, for: .normal)
+        button.backgroundColor = UIColor.systemYellow
+        button.layer.cornerRadius = 16
+        button.clipsToBounds = true
         
-        startButton.addTarget(self, action: #selector(startButtonCheck(but:)), for: .touchDown)
+        let startButtonImage  = UIImage(named: "play")
         
-        self.view.addSubview(self.startButton)
+        button.setImage(startButtonImage, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        
+        button.addTarget(self, action: #selector(startButtonCheck), for: .touchDown)
+        
+        self.view.addSubview(button)
     }
     
     
-    // StartButtonCheck
+    // MARK: - StartButtonCheck
     
-    @objc func startButtonCheck(but: UIButton) {
-        
-        // Проверяем все ли готово для старта
-        switch clickedButtonsArray {
-            case _ where clickedButtonsArray.count < 5:
-                alert(title: "Выберите 5 ячеек!", message: "Должно быть выбрано 5 чисел для начала игры", answer: "Хорошо", style: .alert)
-            case _ where (Int(ownBetTextField.text ?? "не анрапнулось") ?? 0) <= 0:
-                alert(title: "Ставка не указана!", message: "Укажите ставку с помощью ползунка или введите вручную", answer: "Хорошо", style: .alert)
-            case _ where  currentBalance < ownBetUnwrapp():
-            alert(title: "Пополните баланс!", message: "Перейдите в вкладку кошелек и пополните баланс удобным способом", answer: "Хорошо", style: .alert)
-        default: startTheGame()
-        }
-        
-        
-        func ownBetUnwrapp() -> Int {
-            return Int(ownBetTextField.text ?? "ownBet не анрапнулся") ?? 0
-            
-        }
-        
-        //Активация игры
-        
-        func startTheGame() {
-            
-            // Генерация 5 рандомных чисел
-            var randomArray = [Int]()
-            
-            while randomArray.count < 5 {
-                let n = Int.random(in: 1...24)
-                
-                if randomArray.contains(n){
-                    
-                } else {
-                    randomArray.append(n)
-                }
-            }
-            
-            // Проверяем совпали-ли
-            var correctlyChosenNumbers = [Int]()
-            for i in randomArray {
-                if clickedButtonsArray.contains(i) {
-                    correctlyChosenNumbers.append(i)
-                }
-            }
-            
-            // Обновляем баланс
-            
-            if correctlyChosenNumbers.count == (coefSegmentedControl.selectedSegmentIndex + 1) {
-                switch coefSegmentedControl.selectedSegmentIndex {
-                case 0: currentBalance += Int(Double(ownBetUnwrapp()) * 1.5)
-                default: currentBalance += ownBetUnwrapp() * (coefSegmentedControl.selectedSegmentIndex + 1)
-                }
-            } else {currentBalance -= ownBetUnwrapp()}
-            
-            
-            balanceLable.text = "Баланс: " + String(currentBalance)
-            
-            
-            sliderMaxValueUpdate()
-            
-            
-            // Проверка корректности работы программы
-            print("Сгенерированные цифры: \(randomArray)")
-            print("Выбранные цифры: \(clickedButtonsArray)")
-            print("Совпавшие цифры: \(correctlyChosenNumbers)")
-            print(  currentBalance)
-            print("Выбранный коэфициент: \(coefSegmentedControl.selectedSegmentIndex)")
-        }
-        
+    @objc func startButtonCheck(_ button: UIButton) {
+        guard validateSelection(), validateBet(), validateBalance() else { return }
+        startTheGame()
     }
+
+    // MARK: - Validation
+
+    private func validateSelection() -> Bool {
+        guard clickedButtonsArray.count == 5 else {
+            alert(title: "Выберите 5 ячеек!", message: "Должно быть выбрано 5 чисел для начала игры", answer: "Хорошо", style: .actionSheet)
+            return false
+        }
+        return true
+    }
+
+    private func validateBet() -> Bool {
+        guard let bet = ownBetUnwrap(), bet > 0 else {
+            alert(title: "Ставка не указана!", message: "Укажите ставку с помощью ползунка или введите вручную", answer: "Ок", style: .actionSheet)
+            return false
+        }
+        return true
+    }
+
+    private func validateBalance() -> Bool {
+        guard currentBalance >= ownBetUnwrap()! else {
+            
+            alert(title: "Пополните баланс!", message: "Перейдите в вкладку кошелек и пополните баланс удобным способом", answer: "Ок", style: .actionSheet)
+            return false
+        }
+        return true
+    }
+
+    // MARK: - Game Logic
+
+    private func startTheGame() {
+        let randomArray = generateRandomNumbers(count: 5, range: 1...24)
+        let matchedNumbers = findMatchingNumbers(in: randomArray, from: clickedButtonsArray)
+        updateBalance(matchingCount: matchedNumbers.count)
+        updateUI()
+        
+        // Debugging output
+        printGameDetails(randomArray: randomArray, matchedNumbers: matchedNumbers)
+    }
+
+    private func generateRandomNumbers(count: Int, range: ClosedRange<Int>) -> [Int] {
+        var randomNumbers = Set<Int>()  // Используем Set для обеспечения уникальности чисел
+        while randomNumbers.count < count {
+            randomNumbers.insert(Int.random(in: range))
+        }
+        return Array(randomNumbers)
+    }
+
+    private func findMatchingNumbers(in randomArray: [Int], from selectedNumbers: [Int]) -> [Int] {
+        // Ищем совпадения между сгенерированными числами и выбранными пользователем
+        return randomArray.filter { selectedNumbers.contains($0) }
+    }
+
+    private func updateBalance(matchingCount: Int) {
+        
+        guard let bet = ownBetUnwrap() else { return }
+        
+        let multiplier: Double
+        switch coefSegmentedControl.selectedSegmentIndex {
+        case 0:
+            multiplier = 1.5
+        default:
+            multiplier = Double(coefSegmentedControl.selectedSegmentIndex + 1)
+        }
+        
+        if matchingCount == coefSegmentedControl.selectedSegmentIndex + 1 {
+            currentBalance += Int(Double(bet) * multiplier)  // Выигрыш, если совпадений достаточно
+        } else {
+            currentBalance -= bet  // Убыток, если совпадений недостаточно
+        }
+    }
+
+    private func updateUI() {
+        // Обновляем метку баланса и значение ползунка
+        balanceLabel.text = "Баланс: \(currentBalance)"
+        sliderMaxValueUpdate()
+    }
+
+    private func printGameDetails(randomArray: [Int], matchedNumbers: [Int]) {
+        // Отладочная информация для проверки работы программы
+        print("Сгенерированные цифры: \(randomArray)")
+        print("Выбранные цифры: \(clickedButtonsArray)")
+        print("Совпавшие цифры: \(matchedNumbers)")
+        print("Текущий баланс: \(currentBalance)")
+        print("Выбранный коэффициент: \(coefSegmentedControl.selectedSegmentIndex + 1)x")
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

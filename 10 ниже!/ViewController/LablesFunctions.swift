@@ -10,24 +10,24 @@ import UIKit
 extension ViewController {
     
     
-    //MARK: - BalanceLable
+    //MARK: - BalanceLabel
     
-    func createBallanceLable() {
+    func createBallanceLable(_ label: UILabel) {
         
-        balanceLable.text = "Баланс: " + String(currentBalance)
-        balanceLable.frame = CGRect(x: 30, y: 100, width: 300, height: 50)
-        balanceLable.layer.cornerRadius = 14
-        balanceLable.textColor = UIColor.black
-        balanceLable.textAlignment = .center
-        balanceLable.font = .boldSystemFont(ofSize: 17)
-        balanceLable.layer.cornerRadius = 10
-        balanceLable.backgroundColor = UIColor(red: 0.2, green: 0.64, blue: 0.53, alpha: 1)
-        balanceLable.layer.borderColor = nil
-        balanceLable.layer.borderColor = CGColor(red: 0.4, green: 0.82, blue: 0.71, alpha: 1)
-        balanceLable.layer.borderWidth = 3.0
-        balanceLable.layer.masksToBounds = true
+        label.text = "Баланс: " + String(currentBalance)
+        label.frame = CGRect(x: 30, y: 100, width: 300, height: 50)
+        label.layer.cornerRadius = 14
+        label.textColor = UIColor.black
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 17)
+        label.layer.cornerRadius = 10
+        label.backgroundColor = UIColor(red: 0.2, green: 0.64, blue: 0.53, alpha: 1)
+        label.layer.borderColor = nil
+        label.layer.borderColor = CGColor(red: 0.4, green: 0.82, blue: 0.71, alpha: 1)
+        label.layer.borderWidth = 3.0
+        label.layer.masksToBounds = true
         
-        self.view.addSubview(self.balanceLable)
+        self.view.addSubview(label)
     }
     
     

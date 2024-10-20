@@ -20,24 +20,27 @@ extension ViewController {
     }
     
     
-    // Slider Bet
+    // MARK: - Slider Bet
     
     @objc func sliderChanged(slider: UISlider) {
+        let roundedValue = Int(roundToNearestFifty(Double(slider.value)))
         
-        //TODO: сделать так, чтобы при  движении ползунка, движение происходило каждые 50 единиц.
-        
-        ownBetTextField.text = String(Int(roundToNearestFifty(Double(slider.value))))
-        
+        // Если округленное значение больше баланса, показываем баланс
+        if roundedValue > Int(currentBalance) {
+            ownBetTextField.text = String(Int(currentBalance))
+        } else {
+            ownBetTextField.text = String(roundedValue)
+        }
     }
-    
-    
+
     func roundToNearestFifty(_ value: Double) -> Double {
         return round(value / 50) * 50
     }
-    
-    
+
     func sliderMaxValueUpdate() {
-        betSlider.maximumValue = Float(self.currentBalance)
+        // Устанавливаем максимум слайдера как ближайшее большее значение кратное 50
+        let maxRoundedBalance = roundToNearestFifty(Double(currentBalance))
+        betSlider.maximumValue = Float(maxRoundedBalance)
     }
     
 

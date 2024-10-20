@@ -31,6 +31,9 @@ extension ViewController {
         
     }
     
+    func ownBetUnwrap() -> Int? {
+        return Int(ownBetTextField.text ?? "ownBet не анрапнулся") ?? 0
+    }
     
     //MARK: - Hide keyboard by touch
     

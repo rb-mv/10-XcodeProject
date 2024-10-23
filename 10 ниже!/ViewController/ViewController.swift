@@ -58,6 +58,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - NavigationViewController
+
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(goBack))
         
         //MARK: - Wallpapers
         

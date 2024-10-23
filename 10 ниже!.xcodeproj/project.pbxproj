@@ -14,6 +14,9 @@
 		7F19212F2CB02F6A00F703AE /* TextFieldsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F19212E2CB02F6A00F703AE /* TextFieldsFunctions.swift */; };
 		7F1921312CB02FDC00F703AE /* SliderFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1921302CB02FDC00F703AE /* SliderFunctions.swift */; };
 		7F1921332CB034B200F703AE /* SegmentedControlFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1921322CB034B200F703AE /* SegmentedControlFunctions.swift */; };
+		7F1AF81E2CC68D9700CBF475 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AF81D2CC68D9700CBF475 /* MenuViewController.swift */; };
+		7F1AF8232CC68E7B00CBF475 /* ButtonsMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AF8222CC68E7B00CBF475 /* ButtonsMenuVC.swift */; };
+		7F1AF8262CC6928700CBF475 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AF8252CC6928700CBF475 /* NavigationVC.swift */; };
 		7F37CBA02C3D61F900FECF84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CB9F2C3D61F900FECF84 /* AppDelegate.swift */; };
 		7F37CBA22C3D61F900FECF84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBA12C3D61F900FECF84 /* SceneDelegate.swift */; };
 		7F37CBA42C3D61F900FECF84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBA32C3D61F900FECF84 /* ViewController.swift */; };
@@ -52,6 +55,9 @@
 		7F19212E2CB02F6A00F703AE /* TextFieldsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsFunctions.swift; sourceTree = "<group>"; };
 		7F1921302CB02FDC00F703AE /* SliderFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFunctions.swift; sourceTree = "<group>"; };
 		7F1921322CB034B200F703AE /* SegmentedControlFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlFunctions.swift; sourceTree = "<group>"; };
+		7F1AF81D2CC68D9700CBF475 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		7F1AF8222CC68E7B00CBF475 /* ButtonsMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsMenuVC.swift; sourceTree = "<group>"; };
+		7F1AF8252CC6928700CBF475 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 		7F37CB9C2C3D61F900FECF84 /* 10 ниже!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "10 ниже!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F37CB9F2C3D61F900FECF84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F37CBA12C3D61F900FECF84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +109,15 @@
 			path = ButtonsFunctions;
 			sourceTree = "<group>";
 		};
+		7F1AF8242CC68EAE00CBF475 /* MenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				7F1AF8222CC68E7B00CBF475 /* ButtonsMenuVC.swift */,
+				7F1AF81D2CC68D9700CBF475 /* MenuViewController.swift */,
+			);
+			path = MenuVC;
+			sourceTree = "<group>";
+		};
 		7F28BD1E2C5182C10000DBFA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +130,7 @@
 				7F19212A2CB0293800F703AE /* LablesFunctions.swift */,
 				7FBAB9362CC2CC1D00C26748 /* Alerts.swift */,
 				7FC09CDA2CC5947500CCDE75 /* Wallpapers - ViewController.swift */,
+				7F1AF8252CC6928700CBF475 /* NavigationVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -144,6 +160,7 @@
 			children = (
 				7F37CB9F2C3D61F900FECF84 /* AppDelegate.swift */,
 				7F37CBA12C3D61F900FECF84 /* SceneDelegate.swift */,
+				7F1AF8242CC68EAE00CBF475 /* MenuVC */,
 				7F28BD1E2C5182C10000DBFA /* ViewController */,
 				7F37CBA52C3D61F900FECF84 /* Main.storyboard */,
 				7F37CBA82C3D61F900FECF84 /* Assets.xcassets */,
@@ -304,10 +321,13 @@
 				7F1921292CB0287D00F703AE /* StartButtonFunctions.swift in Sources */,
 				7FC09CDB2CC5947500CCDE75 /* Wallpapers - ViewController.swift in Sources */,
 				7F1921332CB034B200F703AE /* SegmentedControlFunctions.swift in Sources */,
+				7F1AF8232CC68E7B00CBF475 /* ButtonsMenuVC.swift in Sources */,
 				7F1921262CB027CE00F703AE /* NumbersButtonFunctions.swift in Sources */,
 				7F08ABD32C56757900C12B9D /* Media - ViewController.swift in Sources */,
 				7F1921312CB02FDC00F703AE /* SliderFunctions.swift in Sources */,
 				7F37CBA42C3D61F900FECF84 /* ViewController.swift in Sources */,
+				7F1AF81E2CC68D9700CBF475 /* MenuViewController.swift in Sources */,
+				7F1AF8262CC6928700CBF475 /* NavigationVC.swift in Sources */,
 				7F19212B2CB0293800F703AE /* LablesFunctions.swift in Sources */,
 				7F19212F2CB02F6A00F703AE /* TextFieldsFunctions.swift in Sources */,
 				7F37CBA02C3D61F900FECF84 /* AppDelegate.swift in Sources */,

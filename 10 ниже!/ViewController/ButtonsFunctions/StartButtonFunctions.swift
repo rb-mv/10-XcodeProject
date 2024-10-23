@@ -27,6 +27,10 @@ extension ViewController {
         button.setImage(startButtonImage, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         
+        button.contentHorizontalAlignment = .left
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 10)
+        
         
         button.addTarget(self, action: #selector(startButtonCheck), for: .touchDown)
         

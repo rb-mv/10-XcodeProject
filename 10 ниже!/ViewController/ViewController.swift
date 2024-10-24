@@ -63,6 +63,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(goBack))
         
+        
+        
         //MARK: - Wallpapers
         
         createGameWallpapers(gameWallpapersImageView)
@@ -103,7 +105,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //MARK: - BalanceLabel
         
-        createBallanceLable(balanceLabel)
+        self.navigationItem.rightBarButtonItem = createBalanceBarButton(balanceLabel)
+
+        //createBallanceLable(balanceLabel)
     }
     
 }

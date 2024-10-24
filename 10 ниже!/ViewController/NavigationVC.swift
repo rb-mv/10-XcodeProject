@@ -14,8 +14,4 @@ extension ViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-
-    
-    
-    
 }

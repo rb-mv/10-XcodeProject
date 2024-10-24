@@ -22,7 +22,9 @@ class menuViewController: UIViewController {
         self.navigationItem.title = "10 ниже!"
         
         createStartMenuButton(startMenuButton)
+        
         createStatisticsMenuButton(statisticsMenuButton)
+        
         createSettingsMenuBatton(settingsMenuButton)
     }
     

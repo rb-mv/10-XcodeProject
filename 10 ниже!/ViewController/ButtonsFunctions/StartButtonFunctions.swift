@@ -77,7 +77,7 @@ extension ViewController {
     private func startTheGame() {
         let randomArray = generateRandomNumbers(count: 5, range: 1...24)
         let matchedNumbers = findMatchingNumbers(in: randomArray, from: clickedButtonsArray)
-        updateBalance(matchingCount: matchedNumbers.count)
+        updateBalanceInfo(matchingCount: matchedNumbers.count)
         updateUI()
         
         // Debugging output
@@ -91,17 +91,20 @@ extension ViewController {
         }
         return Array(randomNumbers)
     }
+    
 
     private func findMatchingNumbers(in randomArray: [Int], from selectedNumbers: [Int]) -> [Int] {
         // Ищем совпадения между сгенерированными числами и выбранными пользователем
         return randomArray.filter { selectedNumbers.contains($0) }
     }
+    
 
-    private func updateBalance(matchingCount: Int) {
+    private func updateBalanceInfo(matchingCount: Int) {
         
         guard let bet = ownBetUnwrap() else { return }
         
         let multiplier: Double
+        
         switch coefSegmentedControl.selectedSegmentIndex {
         case 0:
             multiplier = 1.5
@@ -110,13 +113,16 @@ extension ViewController {
         }
         
         if matchingCount == coefSegmentedControl.selectedSegmentIndex + 1 {
-            currentBalance += Int(Double(bet) * multiplier)  // Выигрыш, если совпадений достаточно
+            let newBalance = currentBalance + Int(Double(bet) * multiplier)  // Выигрыш, если совпадений достаточно
+            updateBalance(newBalance: newBalance)
         } else {
-            currentBalance -= bet  // Убыток, если совпадений недостаточно
+            let newBalance = currentBalance - bet // Убыток, если совпадений недостаточно
+            updateBalance(newBalance: newBalance)
         }
     }
 
     private func updateUI() {
+        
         // Обновляем метку баланса и значение ползунка
         balanceLabel.text = "Баланс: \(currentBalance)"
         sliderMaxValueUpdate()

@@ -10,13 +10,13 @@
 		7F08ABD32C56757900C12B9D /* Media - ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08ABD22C56757900C12B9D /* Media - ViewController.swift */; };
 		7F1921262CB027CE00F703AE /* NumbersButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1921252CB027CE00F703AE /* NumbersButtonFunctions.swift */; };
 		7F1921292CB0287D00F703AE /* StartButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1921282CB0287D00F703AE /* StartButtonFunctions.swift */; };
-		7F19212B2CB0293800F703AE /* LablesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F19212A2CB0293800F703AE /* LablesFunctions.swift */; };
 		7F19212F2CB02F6A00F703AE /* TextFieldsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F19212E2CB02F6A00F703AE /* TextFieldsFunctions.swift */; };
 		7F1921312CB02FDC00F703AE /* SliderFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1921302CB02FDC00F703AE /* SliderFunctions.swift */; };
 		7F1921332CB034B200F703AE /* SegmentedControlFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1921322CB034B200F703AE /* SegmentedControlFunctions.swift */; };
 		7F1AF81E2CC68D9700CBF475 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AF81D2CC68D9700CBF475 /* MenuViewController.swift */; };
 		7F1AF8232CC68E7B00CBF475 /* ButtonsMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AF8222CC68E7B00CBF475 /* ButtonsMenuVC.swift */; };
 		7F1AF8262CC6928700CBF475 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AF8252CC6928700CBF475 /* NavigationVC.swift */; };
+		7F1AF8442CCA61D800CBF475 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AF8432CCA61D800CBF475 /* UserDefaults.swift */; };
 		7F37CBA02C3D61F900FECF84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CB9F2C3D61F900FECF84 /* AppDelegate.swift */; };
 		7F37CBA22C3D61F900FECF84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBA12C3D61F900FECF84 /* SceneDelegate.swift */; };
 		7F37CBA42C3D61F900FECF84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBA32C3D61F900FECF84 /* ViewController.swift */; };
@@ -26,6 +26,10 @@
 		7F37CBB72C3D61FA00FECF84 /* _0______Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBB62C3D61FA00FECF84 /* _0______Tests.swift */; };
 		7F37CBC12C3D61FA00FECF84 /* _0______UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBC02C3D61FA00FECF84 /* _0______UITests.swift */; };
 		7F37CBC32C3D61FA00FECF84 /* _0______UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37CBC22C3D61FA00FECF84 /* _0______UITestsLaunchTests.swift */; };
+		7F3D53C12CCA8B4500908102 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D53C02CCA8B4500908102 /* PaymentViewController.swift */; };
+		7F3D53C52CCBCE9700908102 /* BarButtonItems - ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D53C42CCBCE9700908102 /* BarButtonItems - ViewController.swift */; };
+		7F3D53C72CCBD1FF00908102 /* Navigation - MenuVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D53C62CCBD1FF00908102 /* Navigation - MenuVc.swift */; };
+		7F3D53CB2CCBD97700908102 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3D53CA2CCBD97700908102 /* ProfileTableViewController.swift */; };
 		7FBAB9372CC2CC1D00C26748 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBAB9362CC2CC1D00C26748 /* Alerts.swift */; };
 		7FC09CDB2CC5947500CCDE75 /* Wallpapers - ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC09CDA2CC5947500CCDE75 /* Wallpapers - ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,13 +55,13 @@
 		7F08ABD22C56757900C12B9D /* Media - ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Media - ViewController.swift"; sourceTree = "<group>"; };
 		7F1921252CB027CE00F703AE /* NumbersButtonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersButtonFunctions.swift; sourceTree = "<group>"; };
 		7F1921282CB0287D00F703AE /* StartButtonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonFunctions.swift; sourceTree = "<group>"; };
-		7F19212A2CB0293800F703AE /* LablesFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LablesFunctions.swift; sourceTree = "<group>"; };
 		7F19212E2CB02F6A00F703AE /* TextFieldsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsFunctions.swift; sourceTree = "<group>"; };
 		7F1921302CB02FDC00F703AE /* SliderFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFunctions.swift; sourceTree = "<group>"; };
 		7F1921322CB034B200F703AE /* SegmentedControlFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlFunctions.swift; sourceTree = "<group>"; };
 		7F1AF81D2CC68D9700CBF475 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7F1AF8222CC68E7B00CBF475 /* ButtonsMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsMenuVC.swift; sourceTree = "<group>"; };
 		7F1AF8252CC6928700CBF475 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
+		7F1AF8432CCA61D800CBF475 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		7F37CB9C2C3D61F900FECF84 /* 10 ниже!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "10 ниже!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F37CB9F2C3D61F900FECF84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F37CBA12C3D61F900FECF84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,10 @@
 		7F37CBBC2C3D61FA00FECF84 /* 10 ниже!UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "10 ниже!UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F37CBC02C3D61FA00FECF84 /* _0______UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_0______UITests.swift"; sourceTree = "<group>"; };
 		7F37CBC22C3D61FA00FECF84 /* _0______UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_0______UITestsLaunchTests.swift"; sourceTree = "<group>"; };
+		7F3D53C02CCA8B4500908102 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		7F3D53C42CCBCE9700908102 /* BarButtonItems - ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarButtonItems - ViewController.swift"; sourceTree = "<group>"; };
+		7F3D53C62CCBD1FF00908102 /* Navigation - MenuVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation - MenuVc.swift"; sourceTree = "<group>"; };
+		7F3D53CA2CCBD97700908102 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		7FBAB9362CC2CC1D00C26748 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		7FC09CDA2CC5947500CCDE75 /* Wallpapers - ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallpapers - ViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +113,7 @@
 			children = (
 				7F1921252CB027CE00F703AE /* NumbersButtonFunctions.swift */,
 				7F1921282CB0287D00F703AE /* StartButtonFunctions.swift */,
+				7F3D53C42CCBCE9700908102 /* BarButtonItems - ViewController.swift */,
 			);
 			path = ButtonsFunctions;
 			sourceTree = "<group>";
@@ -114,6 +123,7 @@
 			children = (
 				7F1AF8222CC68E7B00CBF475 /* ButtonsMenuVC.swift */,
 				7F1AF81D2CC68D9700CBF475 /* MenuViewController.swift */,
+				7F3D53C62CCBD1FF00908102 /* Navigation - MenuVc.swift */,
 			);
 			path = MenuVC;
 			sourceTree = "<group>";
@@ -127,10 +137,9 @@
 				7F08ABD22C56757900C12B9D /* Media - ViewController.swift */,
 				7F19212E2CB02F6A00F703AE /* TextFieldsFunctions.swift */,
 				7F1921322CB034B200F703AE /* SegmentedControlFunctions.swift */,
-				7F19212A2CB0293800F703AE /* LablesFunctions.swift */,
-				7FBAB9362CC2CC1D00C26748 /* Alerts.swift */,
 				7FC09CDA2CC5947500CCDE75 /* Wallpapers - ViewController.swift */,
 				7F1AF8252CC6928700CBF475 /* NavigationVC.swift */,
+				7FBAB9362CC2CC1D00C26748 /* Alerts.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -161,7 +170,10 @@
 				7F37CB9F2C3D61F900FECF84 /* AppDelegate.swift */,
 				7F37CBA12C3D61F900FECF84 /* SceneDelegate.swift */,
 				7F1AF8242CC68EAE00CBF475 /* MenuVC */,
+				7F3D53C92CCBD90900908102 /* ProfileTableVC */,
 				7F28BD1E2C5182C10000DBFA /* ViewController */,
+				7F1AF8432CCA61D800CBF475 /* UserDefaults.swift */,
+				7F3D53C82CCBD8F400908102 /* PaymentViewController */,
 				7F37CBA52C3D61F900FECF84 /* Main.storyboard */,
 				7F37CBA82C3D61F900FECF84 /* Assets.xcassets */,
 				7F37CBAA2C3D61F900FECF84 /* LaunchScreen.storyboard */,
@@ -185,6 +197,22 @@
 				7F37CBC22C3D61FA00FECF84 /* _0______UITestsLaunchTests.swift */,
 			);
 			path = "10 ниже!UITests";
+			sourceTree = "<group>";
+		};
+		7F3D53C82CCBD8F400908102 /* PaymentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D53C02CCA8B4500908102 /* PaymentViewController.swift */,
+			);
+			path = PaymentViewController;
+			sourceTree = "<group>";
+		};
+		7F3D53C92CCBD90900908102 /* ProfileTableVC */ = {
+			isa = PBXGroup;
+			children = (
+				7F3D53CA2CCBD97700908102 /* ProfileTableViewController.swift */,
+			);
+			path = ProfileTableVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,13 +350,17 @@
 				7FC09CDB2CC5947500CCDE75 /* Wallpapers - ViewController.swift in Sources */,
 				7F1921332CB034B200F703AE /* SegmentedControlFunctions.swift in Sources */,
 				7F1AF8232CC68E7B00CBF475 /* ButtonsMenuVC.swift in Sources */,
+				7F1AF8442CCA61D800CBF475 /* UserDefaults.swift in Sources */,
 				7F1921262CB027CE00F703AE /* NumbersButtonFunctions.swift in Sources */,
 				7F08ABD32C56757900C12B9D /* Media - ViewController.swift in Sources */,
+				7F3D53C52CCBCE9700908102 /* BarButtonItems - ViewController.swift in Sources */,
+				7F3D53C12CCA8B4500908102 /* PaymentViewController.swift in Sources */,
+				7F3D53C72CCBD1FF00908102 /* Navigation - MenuVc.swift in Sources */,
+				7F3D53CB2CCBD97700908102 /* ProfileTableViewController.swift in Sources */,
 				7F1921312CB02FDC00F703AE /* SliderFunctions.swift in Sources */,
 				7F37CBA42C3D61F900FECF84 /* ViewController.swift in Sources */,
 				7F1AF81E2CC68D9700CBF475 /* MenuViewController.swift in Sources */,
 				7F1AF8262CC6928700CBF475 /* NavigationVC.swift in Sources */,
-				7F19212B2CB0293800F703AE /* LablesFunctions.swift in Sources */,
 				7F19212F2CB02F6A00F703AE /* TextFieldsFunctions.swift in Sources */,
 				7F37CBA02C3D61F900FECF84 /* AppDelegate.swift in Sources */,
 				7FBAB9372CC2CC1D00C26748 /* Alerts.swift in Sources */,

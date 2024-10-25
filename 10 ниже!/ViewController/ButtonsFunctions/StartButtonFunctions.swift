@@ -124,7 +124,7 @@ extension ViewController {
     private func updateUI() {
         
         // Обновляем метку баланса и значение ползунка
-        balanceLabel.text = "Баланс: \(currentBalance)"
+        balanceButton.titleLabel?.text = "Баланс: \(currentBalance)"
         sliderMaxValueUpdate()
     }
 

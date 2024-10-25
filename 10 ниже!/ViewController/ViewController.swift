@@ -17,28 +17,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     // Wallpapers
+    
     private var gameWallpapersImageView = UIImageView()
     
     
-    //  Коэффициент
-    public var coefSegmentedControl = UISegmentedControl()
+    //  CoefSegmentedControl
+    
+    public var coefSegmentedControl     = UISegmentedControl()
     
     
-    // bet
-    public let betSlider = UISlider()
-    public var ownBetTextField = UITextField()
+    // betSlider &BetTextField
+    
+    public let betSlider           = UISlider()
+    public var ownBetTextField     = UITextField()
     
     
     // Media
-    public var buttonClickPlayer = AVAudioPlayer()
-    public var buttonClickSounds = [String]()
     
-    
-    //  Выбранные элементы:
-    public var clickedButtonsArray = [Int]()
+    public var buttonClickPlayer   = AVAudioPlayer()
+    public var buttonClickSounds   = [String]()
     
     
     //Buttons
+    
+    /// barButtonItems
+    private let menuButton    = UIButton()
+    
+    public let balanceButton  = UIButton()
+    public var currentBalance = 5000
     
     /// Numbers
     
@@ -46,28 +52,42 @@ class ViewController: UIViewController, UITextFieldDelegate {
     public let numberButtonTexts = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
                                "11", "12", "13", "14", "15", "16", "17", "18",
                                "19", "20", "21", "22", "23", "24"]
+    public var clickedButtonsArray = [Int]()
     
     /// Start Button
-    public let startButton = UIButton()
     
-    // Balance
-    public let balanceLabel = UILabel()
-    public var currentBalance = 5000
+    public let startButton    = UIButton()
+    
+    
+    // UserData
+    
+    public let userDefaults = UserDefaults.standard
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: - NavigationViewController
-
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(goBack))
         
         
         
         //MARK: - Wallpapers
         
         createGameWallpapers(gameWallpapersImageView)
+        
+        
+        //MARK: - CoefSegmentedControl
+
+        createSegmentedControl(&coefSegmentedControl)
+        
+        
+        // MARK: - BetSlider
+        
+        createBetSlider(betSlider)
+        
+        
+        //MARK: - OwnBetTextField
+        
+        createOwnBetTextField(ownBetTextField)
         
         
         // MARK: - Media
@@ -78,22 +98,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         checkSoundExist(&buttonClickPlayer, buttonClickSounds)
         
         
-        // MARK: - BetSlider
-        
-        createBetSlider(betSlider)
-        
-        
-        //MARK: - UITextField
-        
-        createOwnBetTextField(ownBetTextField)
-        
-        
-        //MARK: - coefSegmentedControl
+        //MARK: - NavigationViewController
 
-        createSegmentedControl(&coefSegmentedControl)
+        self.navigationItem.leftBarButtonItem = createLeftBarButtonItem(menuButton)
+        self.navigationItem.rightBarButtonItem = createRightBarBattonItem(balanceButton)
         
         
-        //MARK: - ceateAllNumberButtons
+        //MARK: - CeateAllNumberButtons
         
         createAllNumberButtons()
         
@@ -103,11 +114,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         createStartButton(startButton)
         
         
-        //MARK: - BalanceLabel
+        //MARK: - UploadUserInfo
         
-        self.navigationItem.rightBarButtonItem = createBalanceBarButton(balanceLabel)
-
-        //createBallanceLable(balanceLabel)
+        uploadUserInfo(userDefaults)
+        
+        
     }
     
 }

@@ -94,6 +94,7 @@ extension ViewController {
     
 
     private func findMatchingNumbers(in randomArray: [Int], from selectedNumbers: [Int]) -> [Int] {
+        
         // Ищем совпадения между сгенерированными числами и выбранными пользователем
         return randomArray.filter { selectedNumbers.contains($0) }
     }
@@ -125,7 +126,7 @@ extension ViewController {
         
         // Обновляем метку баланса и значение ползунка
         balanceButton.titleLabel?.text = "Баланс: \(currentBalance)"
-        sliderMaxValueUpdate()
+        updateSliderMaxValue()
     }
 
     private func printGameDetails(randomArray: [Int], matchedNumbers: [Int]) {

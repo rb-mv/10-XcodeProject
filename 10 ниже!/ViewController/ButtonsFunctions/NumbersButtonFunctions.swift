@@ -23,9 +23,9 @@ extension ViewController {
     }
     
     
-    //MARK: Create Button
+    //MARK: - Create Button
     
-    func createEachNumberButton(button: UIButton, text: String, row: Int, line: Int) {
+    private func createEachNumberButton(button: UIButton, text: String, row: Int, line: Int) {
         
         // Константы для расположения кнопок
         let buttonWidth: CGFloat = 50
@@ -48,17 +48,37 @@ extension ViewController {
         // Устанавливаем frame для кнопки
         button.frame = CGRect(x: xPosition, y: yPosition, width: buttonWidth, height: buttonHeight)
         
-        button.tag = Int(text) ?? 0
+        button.tag = Int(text) ?? 0 // для контроля кол-ва выбранных кнопок в массиве
         
-        // Настройка кнопки
-        button.setTitle(text, for: .normal)
+        
+        //Присваиваем основные параметры
+        buttonConfiguration(button, text)
+        
+        //Добавляем таргет:
+        button.addTarget(self, action: #selector(buttonTapped(button: event: )), for: .touchDown)
+        
+        
+    }
+    
+    // MARK: - ButtonConfiguration
+    
+    private func buttonConfiguration(_ button: UIButton, _ buttonText: String) {
+        
+        // Добавляем кнопку на view
+        self.view.addSubview(button)
+        
+        // основные настройки
+        button.setTitle(buttonText, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .systemCyan
         button.layer.cornerRadius = 14
         button.clipsToBounds = true
         
-        // Добавляем кнопку на view
-        view.addSubview(button)
+        // эффект нажатия
+        buttonWrongTapEffect(button)
+    }
+    
+    private func buttonWrongTapEffect(_ button: UIButton) {
         
         // Эффект фона
         let backgroundEffectView = UIView()
@@ -71,62 +91,65 @@ extension ViewController {
         // Начальное состояние эффекта
         backgroundEffectView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         backgroundEffectView.alpha = 0
-        
-        // Добавление таргета на кнопку
-        button.addTarget(self, action: #selector(buttonTapped(button: event: )), for: .touchDown)
     }
     
-    //MARK: Target Button Tupped
+    
+    //MARK: - Target Button Tupped
     
     @objc func buttonTapped(button: UIButton, event: UIEvent) {
         
-        
-        // Проверка и окраска выбранных элементов
-    
-        if button.backgroundColor == .green {
-            
-            clickedButtonsArray.removeAll { $0 == button.tag }
-            button.backgroundColor = .systemCyan
-            
-            // включение звукового эффекта
+        // Проверяем текущий цвет кнопки и выполняем соответствующее действие
+        if isButtonSelected(button) {
+            deselectButton(button)
             playCurrentClickSound(player: &buttonClickPlayer, state: true)
-            
         } else {
-            clickedButtonsArray.append(button.tag)
-            switch clickedButtonsArray.count <= 5 {
-            case true:
-                
-                switch button.backgroundColor {
-                case UIColor.systemCyan: button.backgroundColor = .green
-                case UIColor.green: button.backgroundColor = .systemCyan
-                default: print("You have tupped button which has unknown color!")
-                }
-                
-                // включение звукового эффекта
-                playCurrentClickSound(player: &buttonClickPlayer, state: true)
-                
-            case false :
-                
-                guard let backgroundEffectView = button.subviews.first else { return }
-                UIView.animate(withDuration: 0.2, animations: {
-                    backgroundEffectView.transform = CGAffineTransform.identity
-                    backgroundEffectView.alpha = 1
-                }) { _ in
-                    // Возвращаем к начальному состоянию
-                    UIView.animate(withDuration: 0.2) {
-                        backgroundEffectView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                        backgroundEffectView.alpha = 0
-                    }
-                }
-                clickedButtonsArray.removeAll { $0 == button.tag }
-                
-                // включение звукового эффекта
-                playCurrentClickSound(player: &buttonClickPlayer, state: false)
+            selectButton(button)
+        }
+        
+        waveTupEffect(button: button, event: event)
+        print(clickedButtonsArray)
+    }
+
+    // MARK: - Helper Functions for Target
+
+    private func isButtonSelected(_ button: UIButton) -> Bool {
+        return button.backgroundColor == .green
+    }
+
+    private func selectButton(_ button: UIButton) {
+        clickedButtonsArray.append(button.tag)
+        
+        if clickedButtonsArray.count <= 5 {
+            toggleButtonColor(button)
+            playCurrentClickSound(player: &buttonClickPlayer, state: true)
+        } else {
+            animateExceededSelection(for: button)
+            clickedButtonsArray.removeAll { $0 == button.tag }
+            playCurrentClickSound(player: &buttonClickPlayer, state: false)
+        }
+    }
+
+    private func deselectButton(_ button: UIButton) {
+        clickedButtonsArray.removeAll { $0 == button.tag }
+        button.backgroundColor = .systemCyan
+    }
+
+    private func toggleButtonColor(_ button: UIButton) {
+        button.backgroundColor = (button.backgroundColor == .systemCyan) ? .green : .systemCyan
+    }
+
+    private func animateExceededSelection(for button: UIButton) {
+        guard let backgroundEffectView = button.subviews.first else { return }
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            backgroundEffectView.transform = .identity
+            backgroundEffectView.alpha = 1
+        }) { _ in
+            UIView.animate(withDuration: 0.2) {
+                backgroundEffectView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                backgroundEffectView.alpha = 0
             }
         }
-        waveTupEffect(button: button, event: event)
-        
-        print(clickedButtonsArray)
     }
     
     

@@ -8,7 +8,7 @@ extension ViewController {
     
     //MARK: - createBetSlider
     
-    func createBetSlider(_ slider: UISlider) {
+    public func createBetSlider(_ slider: UISlider) {
         
         slider.frame = CGRect(x: 30, y: 550, width: 220, height: 50)
         slider.minimumValue = 0.0
@@ -32,12 +32,14 @@ extension ViewController {
             ownBetTextField.text = String(roundedValue)
         }
     }
-
-    func roundToNearestFifty(_ value: Double) -> Double {
+    private func roundToNearestFifty(_ value: Double) -> Double {
         return round(value / 50) * 50
     }
+    
+    
 
-    func sliderMaxValueUpdate() {
+    public func updateSliderMaxValue() {
+        
         // Устанавливаем максимум слайдера как ближайшее большее значение кратное 50
         let maxRoundedBalance = roundToNearestFifty(Double(currentBalance))
         betSlider.maximumValue = Float(maxRoundedBalance)

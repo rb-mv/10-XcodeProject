@@ -59,7 +59,7 @@ extension ViewController {
     //MARK: - LeftBarButtonItem
     
     
-    func createLeftBarButtonItem(_ button: UIButton) -> UIBarButtonItem {
+    public func createLeftBarButtonItem(_ button: UIButton) -> UIBarButtonItem {
         
         button.frame.size = CGSize(width: 70, height: 40)
         button.backgroundColor = UIColor(red: 0.2, green: 0.64, blue: 0.53, alpha: 1)

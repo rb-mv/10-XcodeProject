@@ -68,8 +68,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
-        
-        
         //MARK: - Wallpapers
         
         createGameWallpapers(gameWallpapersImageView)
@@ -118,7 +116,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         uploadUserInfo(userDefaults)
         
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // MARK: - UpdateView
+        
+        updateSliderMaxValue()
+    }
+    
     
 }
